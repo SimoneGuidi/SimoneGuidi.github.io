@@ -79,7 +79,7 @@
     .screenshot-item { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
     .screenshot-item img { width: 100%; display: block; }
     .screenshot-caption {
-      background: var(--bg2); padding: 10px 16px;
+      display: block; padding: 0 0 16px 0;
       font-size: 0.8rem; color: var(--muted); font-family: var(--mono);
     }
 
@@ -150,18 +150,16 @@
 
     <div class="proj-section">
       <h2 class="proj-section-title">Screenshot</h2>
+      <div class="screenshot-caption">// le immagini illustrano l'operatività dell'applicazione</div>
       <div class="screenshots">
         <div class="screenshot-item">
           <img src="../screenshots/pycalc-mockup-1.png" alt="PyCalc — vista principale" loading="lazy" />
-          <div class="screenshot-caption">// vista principale — interfaccia calcolatrice</div>
         </div>
         <div class="screenshot-item">
           <img src="../screenshots/pycalc-mockup-2.png" alt="PyCalc — espressione in corso" loading="lazy" />
-          <div class="screenshot-caption">// espressione in corso di inserimento</div>
         </div>
         <div class="screenshot-item">
           <img src="../screenshots/pycalc-mockup-3.png" alt="PyCalc — risultato" loading="lazy" />
-          <div class="screenshot-caption">// visualizzazione risultato</div>
         </div>
       </div>
     </div>

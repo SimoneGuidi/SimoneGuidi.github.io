@@ -8,7 +8,13 @@
       "Bash(echo \"=== $proj ===\")",
       "Read(//Users/simone/Desktop/portfolio-python/$proj/**)",
       "Bash(done)",
-      "Bash(kill %1)"
+      "Bash(kill %1)",
+      "Bash(pkill -f \"memorylab/app.py\")",
+      "Bash(mv memory-mockup1.png memorylab-mockup-1.png)",
+      "Bash(mv memory-mockup2.png memorylab-mockup-2.png)",
+      "Bash(mv memory-mockup3.png memorylab-mockup-3.png)",
+      "Bash(mv memory-mockup4.png memorylab-mockup-4.png)",
+      "Bash(mv memory-mockup5.png memorylab-mockup-5.png)"
     ]
   }
 }

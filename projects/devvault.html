@@ -47,7 +47,7 @@
     .screenshots { display: flex; flex-direction: column; gap: 28px; }
     .screenshot-item { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
     .screenshot-item img { width: 100%; display: block; }
-    .screenshot-caption { background: var(--bg2); padding: 10px 16px; font-size: 0.8rem; color: var(--muted); font-family: var(--mono); }
+    .screenshot-caption { display: block; padding: 0 0 16px 0; font-size: 0.8rem; color: var(--muted); font-family: var(--mono); }
     .proj-cta { display: flex; gap: 16px; margin-top: 52px; flex-wrap: wrap; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s; border: 2px solid transparent; }
     .btn-primary { background: var(--accent); color: #fff; }
@@ -105,26 +105,22 @@
 
     <div class="proj-section">
       <h2 class="proj-section-title">Screenshot</h2>
+      <div class="screenshot-caption">// le immagini illustrano l'operatività dell'applicazione</div>
       <div class="screenshots">
         <div class="screenshot-item">
           <img src="../screenshots/devvault-mockup-1.png" alt="DevVault — lista snippet" loading="lazy" />
-          <div class="screenshot-caption">// lista snippet — filtro per linguaggio e tag</div>
         </div>
         <div class="screenshot-item">
           <img src="../screenshots/devvault-mockup-2.png" alt="DevVault — dettaglio snippet" loading="lazy" />
-          <div class="screenshot-caption">// dettaglio snippet — syntax highlighting inline</div>
         </div>
         <div class="screenshot-item">
           <img src="../screenshots/devvault-mockup-3.png" alt="DevVault — creazione snippet" loading="lazy" />
-          <div class="screenshot-caption">// form creazione snippet — selezione linguaggio e tag</div>
         </div>
         <div class="screenshot-item">
           <img src="../screenshots/devvault-mockup-4.png" alt="DevVault — ricerca" loading="lazy" />
-          <div class="screenshot-caption">// ricerca full-text — risultati filtrati per tag</div>
         </div>
         <div class="screenshot-item">
           <img src="../screenshots/devvault-mockup-5.png" alt="DevVault — API response" loading="lazy" />
-          <div class="screenshot-caption">// risposta API REST — payload JSON strutturato</div>
         </div>
       </div>
     </div>

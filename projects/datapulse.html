@@ -47,7 +47,7 @@
     .screenshots { display: flex; flex-direction: column; gap: 28px; }
     .screenshot-item { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
     .screenshot-item img { width: 100%; display: block; }
-    .screenshot-caption { background: var(--bg2); padding: 10px 16px; font-size: 0.8rem; color: var(--muted); font-family: var(--mono); }
+    .screenshot-caption { display: block; padding: 0 0 16px 0; font-size: 0.8rem; color: var(--muted); font-family: var(--mono); }
     .pipeline-diagram {
       background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
       padding: 28px; font-family: var(--mono); font-size: 0.85rem; color: var(--muted);
@@ -123,18 +123,16 @@
 
     <div class="proj-section">
       <h2 class="proj-section-title">Screenshot</h2>
+      <div class="screenshot-caption">// le immagini illustrano l'operatività dell'applicazione</div>
       <div class="screenshots">
         <div class="screenshot-item">
           <img src="../screenshots/datapulse-mockup-1.png" alt="DataPulse — dashboard Flask" loading="lazy" />
-          <div class="screenshot-caption">// dashboard Flask — visualizzazione dei dati elaborati da Spark</div>
         </div>
         <div class="screenshot-item">
           <img src="../screenshots/datapulse-mockup-2.png" alt="DataPulse — aggregazioni" loading="lazy" />
-          <div class="screenshot-caption">// aggregazioni e metriche — output del job Spark visualizzato in tabella</div>
         </div>
         <div class="screenshot-item">
           <img src="../screenshots/datapulse-mockup-3.png" alt="DataPulse — grafici" loading="lazy" />
-          <div class="screenshot-caption">// grafici — distribuzione dei dati dal dataset CSV processato</div>
         </div>
       </div>
     </div>
