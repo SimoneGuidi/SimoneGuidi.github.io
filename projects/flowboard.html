@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowBoard — Simone Guidi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --bg: #0a0a0f; --bg2: #111118; --bg3: #1a1a25;
+      --text: #e2e8f0; --muted: #94a3b8; --accent: #6366f1; --accent2: #818cf8;
+      --border: rgba(99,102,241,0.18); --radius: 12px;
+      --font: 'Inter', sans-serif; --mono: 'JetBrains Mono', monospace;
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.7; }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: radial-gradient(circle, rgba(99,102,241,0.10) 1px, transparent 1px);
+      background-size: 28px 28px; pointer-events: none; z-index: 0;
+    }
+    a { color: inherit; text-decoration: none; }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 32px; height: 60px;
+      background: rgba(10,10,15,0.85); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: var(--mono); font-size: 1.1rem; font-weight: 600; color: var(--accent); }
+    .nav-back { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-back:hover { color: var(--text); }
+    main { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 60px 24px 100px; }
+    .proj-tag { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
+    .proj-title { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 20px; }
+    .proj-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .stack-badge { background: rgba(99,102,241,0.12); color: var(--accent2); border-radius: 6px; padding: 4px 12px; font-size: 0.82rem; font-family: var(--mono); font-weight: 500; border: 1px solid rgba(99,102,241,0.2); }
+    .proj-desc { color: var(--muted); font-size: 1.05rem; line-height: 1.85; max-width: 700px; }
+    .proj-section { margin: 52px 0; }
+    .proj-section-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .features-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .features-list li { display: flex; align-items: flex-start; gap: 12px; color: var(--muted); font-size: 0.97rem; line-height: 1.6; }
+    .features-list li::before { content: '→'; color: var(--accent); font-family: var(--mono); font-weight: 600; flex-shrink: 0; margin-top: 2px; }
+    .screenshots { display: flex; flex-direction: column; gap: 28px; }
+    .screenshot-item { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+    .screenshot-item img { width: 100%; display: block; }
+    .screenshot-caption { background: var(--bg2); padding: 10px 16px; font-size: 0.8rem; color: var(--muted); font-family: var(--mono); }
+    .proj-cta { display: flex; gap: 16px; margin-top: 52px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s; border: 2px solid transparent; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,102,241,0.35); }
+    .btn-secondary { border-color: var(--accent); color: var(--accent); }
+    .btn-secondary:hover { background: rgba(99,102,241,0.1); transform: translateY(-2px); }
+    @media (max-width: 600px) { nav { padding: 0 20px; } main { padding: 40px 16px 80px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="nav-logo">SG</span>
+    <a href="../index.html#projects" class="nav-back">← Portfolio</a>
+  </nav>
+  <main>
+    <div style="margin-bottom:48px">
+      <p class="proj-tag">// progetto personale · AI</p>
+      <h1 class="proj-title">FlowBoard</h1>
+      <div class="proj-stack">
+        <span class="stack-badge">Python</span>
+        <span class="stack-badge">Flask</span>
+        <span class="stack-badge">Groq API</span>
+        <span class="stack-badge">JavaScript</span>
+        <span class="stack-badge">Drag & Drop API</span>
+      </div>
+      <p class="proj-desc">
+        Kanban board con drag & drop nativo HTML5 e un AI assistant contestuale integrato. L'assistente conosce lo stato
+        corrente del board in tempo reale — colonne, card, loro posizioni — e può rispondere a domande, suggerire priorità
+        o aiutare a organizzare il lavoro direttamente nel contesto delle attività presenti.
+      </p>
+    </div>
+
+    <div class="proj-section">
+      <h2 class="proj-section-title">Funzionalità principali</h2>
+      <ul class="features-list">
+        <li>Drag & drop nativo con HTML5 Drag and Drop API — nessuna libreria esterna, eventi <code style="font-family:var(--mono);color:var(--accent2)">dragstart</code>, <code style="font-family:var(--mono);color:var(--accent2)">dragover</code>, <code style="font-family:var(--mono);color:var(--accent2)">drop</code></li>
+        <li>Colonne Kanban configurabili: Todo, In Progress, Done — con conteggio card dinamico</li>
+        <li>AI assistant integrato (Llama3 via Groq API) che riceve lo stato corrente del board come contesto nel prompt</li>
+        <li>L'assistente può suggerire come organizzare le attività, identificare colli di bottiglia o rispondere a domande sul flusso di lavoro</li>
+        <li>Flask gestisce le rotte, lo stato del board e le chiamate all'API Groq lato server</li>
+        <li>Aggiunta, modifica e rimozione di card in ogni colonna con persistenza in sessione</li>
+      </ul>
+    </div>
+
+    <div class="proj-section">
+      <h2 class="proj-section-title">Stack tecnico</h2>
+      <ul class="features-list">
+        <li><strong style="color:var(--text)">Python / Flask</strong> — gestisce lo stato del board, serve la UI e orchesta le chiamate AI</li>
+        <li><strong style="color:var(--text)">HTML5 Drag and Drop API</strong> — implementazione drag & drop nativa senza jQuery UI o librerie di terze parti</li>
+        <li><strong style="color:var(--text)">Groq API + Llama3</strong> — inferenza LLM a bassa latenza; il board corrente viene serializzato e iniettato nel system prompt</li>
+        <li><strong style="color:var(--text)">JavaScript (Vanilla)</strong> — gestione UI, eventi drag, aggiornamenti DOM e comunicazione con il backend Flask</li>
+      </ul>
+    </div>
+
+    <div class="proj-section">
+      <h2 class="proj-section-title">Screenshot</h2>
+      <div class="screenshots">
+        <div class="screenshot-item">
+          <img src="../screenshots/flowboard-mockup-1.png" alt="FlowBoard — kanban board" loading="lazy" />
+          <div class="screenshot-caption">// kanban board — tre colonne con card drag & drop</div>
+        </div>
+        <div class="screenshot-item">
+          <img src="../screenshots/flowboard-mockup-2.png" alt="FlowBoard — AI assistant" loading="lazy" />
+          <div class="screenshot-caption">// AI assistant contestuale — conosce lo stato del board in tempo reale</div>
+        </div>
+        <div class="screenshot-item">
+          <img src="../screenshots/flowboard-mockup-3.png" alt="FlowBoard — drag in corso" loading="lazy" />
+          <div class="screenshot-caption">// drag & drop nativo HTML5 — spostamento card tra colonne</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-cta">
+      <a href="https://github.com/SimoneGuidi/flowboard" target="_blank" rel="noopener" class="btn btn-primary">GitHub →</a>
+      <a href="../index.html#projects" class="btn btn-secondary">← Tutti i progetti</a>
+    </div>
+  </main>
+</body>
+</html>

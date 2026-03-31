@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/simone/Desktop/portfolio-python/**)",
+      "Read(//Users/simone/Desktop/portfolio-mixed/**)",
+      "Bash(for proj:*)",
+      "Bash(do)",
+      "Bash(echo \"=== $proj ===\")",
+      "Read(//Users/simone/Desktop/portfolio-python/$proj/**)",
+      "Bash(done)",
+      "Bash(kill %1)"
+    ]
+  }
+}

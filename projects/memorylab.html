@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MemoryLab — Simone Guidi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --bg: #0a0a0f; --bg2: #111118; --bg3: #1a1a25;
+      --text: #e2e8f0; --muted: #94a3b8; --accent: #6366f1; --accent2: #818cf8;
+      --border: rgba(99,102,241,0.18); --radius: 12px;
+      --font: 'Inter', sans-serif; --mono: 'JetBrains Mono', monospace;
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.7; }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: radial-gradient(circle, rgba(99,102,241,0.10) 1px, transparent 1px);
+      background-size: 28px 28px; pointer-events: none; z-index: 0;
+    }
+    a { color: inherit; text-decoration: none; }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 32px; height: 60px;
+      background: rgba(10,10,15,0.85); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: var(--mono); font-size: 1.1rem; font-weight: 600; color: var(--accent); }
+    .nav-back { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-back:hover { color: var(--text); }
+    main { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 60px 24px 100px; }
+    .proj-tag { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
+    .proj-title { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 20px; }
+    .proj-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .stack-badge { background: rgba(99,102,241,0.12); color: var(--accent2); border-radius: 6px; padding: 4px 12px; font-size: 0.82rem; font-family: var(--mono); font-weight: 500; border: 1px solid rgba(99,102,241,0.2); }
+    .proj-desc { color: var(--muted); font-size: 1.05rem; line-height: 1.85; max-width: 700px; }
+    .proj-section { margin: 52px 0; }
+    .proj-section-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .features-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .features-list li { display: flex; align-items: flex-start; gap: 12px; color: var(--muted); font-size: 0.97rem; line-height: 1.6; }
+    .features-list li::before { content: '→'; color: var(--accent); font-family: var(--mono); font-weight: 600; flex-shrink: 0; margin-top: 2px; }
+    .no-screenshots {
+      background: var(--bg2); border: 1px dashed var(--border);
+      border-radius: var(--radius); padding: 48px;
+      text-align: center; color: var(--muted); font-size: 0.9rem;
+    }
+    .no-screenshots p { margin-bottom: 8px; }
+    .proj-cta { display: flex; gap: 16px; margin-top: 52px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.2s; border: 2px solid transparent; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,102,241,0.35); }
+    .btn-secondary { border-color: var(--accent); color: var(--accent); }
+    .btn-secondary:hover { background: rgba(99,102,241,0.1); transform: translateY(-2px); }
+    @media (max-width: 600px) { nav { padding: 0 20px; } main { padding: 40px 16px 80px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="nav-logo">SG</span>
+    <a href="../index.html#projects" class="nav-back">← Portfolio</a>
+  </nav>
+  <main>
+    <div style="margin-bottom:48px">
+      <p class="proj-tag">// progetto personale</p>
+      <h1 class="proj-title">MemoryLab</h1>
+      <div class="proj-stack">
+        <span class="stack-badge">Python</span>
+        <span class="stack-badge">Flask</span>
+        <span class="stack-badge">JavaScript</span>
+        <span class="stack-badge">CSS Animations</span>
+      </div>
+      <p class="proj-desc">
+        Gioco di memoria web con tre livelli di difficoltà (Facile, Medio, Difficile) che varia il numero di coppie di carte.
+        Le carte si girano con animazioni CSS 3D fluide, il punteggio tiene conto del tempo impiegato e delle mosse effettuate,
+        e le statistiche di gioco vengono salvate in localStorage per una dashboard persistente tra le sessioni.
+      </p>
+    </div>
+
+    <div class="proj-section">
+      <h2 class="proj-section-title">Funzionalità principali</h2>
+      <ul class="features-list">
+        <li>Tre livelli di difficoltà — da 8 coppie (Facile) a 18 coppie (Difficile), con griglia adattiva</li>
+        <li>Animazione CSS 3D flip delle carte — rotazione realistica con <code style="font-family:var(--mono);color:var(--accent2)">transform: rotateY(180deg)</code> e backface-visibility</li>
+        <li>Sistema di scoring basato su tempo e numero di mosse — più sei veloce, più punti guadagni</li>
+        <li>Dashboard statistiche persistente in localStorage — storico delle ultime partite, record personale</li>
+        <li>Flask serve l'applicazione e gestisce la logica di sessione lato server</li>
+        <li>Shuffle delle carte con algoritmo Fisher-Yates per garantire casualità uniforme</li>
+      </ul>
+    </div>
+
+    <div class="proj-section">
+      <h2 class="proj-section-title">Stack tecnico</h2>
+      <ul class="features-list">
+        <li><strong style="color:var(--text)">Python / Flask</strong> — server che gestisce le rotte e la logica di sessione</li>
+        <li><strong style="color:var(--text)">JavaScript (Vanilla)</strong> — logica di gioco, gestione degli eventi click, timer e calcolo punteggio</li>
+        <li><strong style="color:var(--text)">CSS Animations & 3D Transforms</strong> — flip delle carte, transizioni di stato, effetti hover</li>
+        <li><strong style="color:var(--text)">localStorage</strong> — persistenza dei dati statistici tra le sessioni senza backend database</li>
+      </ul>
+    </div>
+
+    <div class="proj-section">
+      <h2 class="proj-section-title">Screenshot</h2>
+      <div class="no-screenshots">
+        <p>🎬 Il mockup disponibile è una registrazione video (.mov)</p>
+        <p style="font-size:0.82rem">Gli screenshot statici saranno aggiunti a breve. Nel frattempo, esplora il codice su GitHub.</p>
+      </div>
+    </div>
+
+    <div class="proj-cta">
+      <a href="https://github.com/SimoneGuidi/memorylab" target="_blank" rel="noopener" class="btn btn-primary">GitHub →</a>
+      <a href="../index.html#projects" class="btn btn-secondary">← Tutti i progetti</a>
+    </div>
+  </main>
+</body>
+</html>
