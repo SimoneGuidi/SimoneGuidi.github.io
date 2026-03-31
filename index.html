@@ -187,14 +187,27 @@
     /* ===== HERO ===== */
     #hero {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 60px;
       padding-top: 80px;
       max-width: 1100px;
       margin: 0 auto;
       padding-left: 24px;
       padding-right: 24px;
+    }
+    .hero-content { display: flex; flex-direction: column; }
+    .hero-avatar {
+      flex-shrink: 0;
+      width: 280px;
+    }
+    .hero-avatar img {
+      width: 100%;
+      border-radius: 20px;
+      border: 2px solid var(--border);
+      box-shadow: 0 0 48px rgba(99,102,241,0.15);
+      display: block;
     }
     .hero-tag {
       font-family: var(--mono);
@@ -612,6 +625,20 @@
 
       section { padding: 72px 20px; }
 
+      #hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        text-align: center;
+        gap: 36px;
+        padding-top: 100px;
+      }
+      .hero-avatar {
+        width: 160px;
+        margin: 0 auto;
+        order: -1;
+      }
+      .hero-ctas { justify-content: center; }
+
       .about-grid {
         grid-template-columns: 1fr;
         gap: 36px;
@@ -669,20 +696,25 @@
 
   <!-- ===== HERO ===== -->
   <section id="hero">
-    <p class="hero-tag fade-in">// portfolio</p>
-    <h1 class="hero-name fade-in">Simone Guidi</h1>
-    <div class="hero-role fade-in">
-      <span id="typewriter"></span><span class="cursor"></span>
+    <div class="hero-content">
+      <p class="hero-tag fade-in">// portfolio</p>
+      <h1 class="hero-name fade-in">Simone Guidi</h1>
+      <div class="hero-role fade-in">
+        <span id="typewriter"></span><span class="cursor"></span>
+      </div>
+      <p class="hero-bio fade-in">
+        5 anni di esperienza nello sviluppo software, con una forte specializzazione in ambienti Big Data e backend enterprise.
+        Lavoro ogni giorno con Java, Scala e Spark su sistemi distribuiti in produzione. La curiosità è il mio motore: non smetto mai
+        di esplorare nuove tecnologie, dall'intelligenza artificiale al DevOps, perché credo che un buon developer debba sempre
+        guardare oltre il proprio stack.
+      </p>
+      <div class="hero-ctas fade-in">
+        <a href="#projects" class="btn btn-primary">Esplora i progetti ↓</a>
+        <a href="#contact" class="btn btn-secondary">Contattami</a>
+      </div>
     </div>
-    <p class="hero-bio fade-in">
-      5 anni di esperienza nello sviluppo software, con una forte specializzazione in ambienti Big Data e backend enterprise.
-      Lavoro ogni giorno con Java, Scala e Spark su sistemi distribuiti in produzione. La curiosità è il mio motore: non smetto mai
-      di esplorare nuove tecnologie, dall'intelligenza artificiale al DevOps, perché credo che un buon developer debba sempre
-      guardare oltre il proprio stack.
-    </p>
-    <div class="hero-ctas fade-in">
-      <a href="#projects" class="btn btn-primary">Esplora i progetti ↓</a>
-      <a href="#contact" class="btn btn-secondary">Contattami</a>
+    <div class="hero-avatar fade-in">
+      <img src="profile/avatar_profile.png" alt="Simone Guidi" />
     </div>
   </section>
 
